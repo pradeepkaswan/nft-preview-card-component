@@ -1,0 +1,133 @@
+:root {
+	--clr-primary-soft-blue: hsl(215, 51%, 70%);
+	--clr-primary-cyan: hsl(178, 100%, 50%);
+
+	--clr-neutral-100: hsl(0, 0%, 100%);
+	--clr-neutral-700: hsl(215, 32%, 27%);
+	--clr-neutral-800: hsl(216, 50%, 16%);
+	--clr-neutral-900: hsl(217, 54%, 11%);
+
+	--fs-400: 1.125rem; /* 18px */
+	--fs-500: 1.5rem; /* 24px */
+
+	--fw-light: 300;
+	--fw-normal: 400;
+	--fw-semi-bold: 600;
+}
+
+body {
+	font-family: "Outfit", sans-serif;
+	font-size: var(--fs-400);
+	font-weight: var(--fw-normal);
+	background-color: var(--clr-neutral-900);
+	color: var(--clr-primary-soft-blue);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	min-height: 100vh;
+	padding: 1rem;
+}
+
+.card {
+	background-color: var(--clr-neutral-800);
+	border-radius: 0.75rem;
+	max-width: 350px;
+	width: 100%;
+	padding: 1.5rem;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card__image-container {
+	position: relative;
+	overflow: hidden;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	margin-bottom: 1.5rem;
+}
+
+.card__image {
+	width: 100%;
+	display: block;
+}
+
+.card__image-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: hsl(178, 100%, 50%, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.card__image-container:hover .card__image-overlay {
+	opacity: 1;
+}
+
+.card__title {
+	color: var(--clr-neutral-100);
+	font-size: var(--fs-500);
+	cursor: pointer;
+	margin-bottom: 1rem;
+}
+
+.card__title:hover {
+	color: var(--clr-primary-cyan);
+}
+
+.card__description {
+	margin-bottom: 1rem;
+}
+
+.card__details {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--clr-neutral-700);
+}
+
+.card__price {
+	display: flex;
+	align-items: center;
+	color: var(--clr-primary-cyan);
+}
+
+.card__time-left {
+	display: flex;
+	align-items: center;
+}
+
+.card__eth-icon,
+.card__clock-icon {
+	margin-right: 0.5rem;
+}
+
+.card__creator {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.card__creator-avatar {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 1px solid var(--clr-neutral-100);
+}
+
+.card__creator-name {
+	color: var(--clr-neutral-100);
+	cursor: pointer;
+}
+
+.card__creator-name:hover {
+	color: var(--clr-primary-cyan);
+}
